@@ -594,7 +594,7 @@ h2 em {
 .category button {
     border:0;
     background:none;
-    color:var(--wine);
+    color:var(-y-wine);
     font-weight:700;
     font-size:12px;
     margin-top:25px;
@@ -1342,6 +1342,9 @@ h2 em {
 
     .hero__visual {
         height:430px;
+        width:100%;
+        max-width:calc(100vw - 30px);
+        justify-self:center;
     }
 
     .hero-card--main {
@@ -1450,6 +1453,36 @@ h2 em {
 /* ==================== 18. RESPONSIVIDADE — ATÉ 480PX ==================== */
 
 @media(max-width:480px) {
+
+    .hero__visual {
+        height:min(105vw,400px);
+    }
+
+    .hero-card img {
+        object-position:center;
+        padding:8px;
+    }
+
+    .hero-card--main {
+        width:52%;
+        height:62%;
+        left:4%;
+        top:16%;
+    }
+
+    .hero-card--back {
+        width:35%;
+        height:44%;
+        right:4%;
+        top:11%;
+    }
+
+    .hero-card--front {
+        width:33%;
+        height:40%;
+        right:4%;
+        bottom:7%;
+    }
 
     .products {
         grid-template-columns:1fr;
