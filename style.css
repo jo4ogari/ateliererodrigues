@@ -52,7 +52,7 @@ body {
 }
 
 img {
-    display:block;
+    display:flex;
     max-width:100%;
 }
 
@@ -1250,7 +1250,39 @@ h2 em {
     }
 
     .hero__visual {
-        height:580px;
+        width:min(100%,720px);
+        height:540px;
+        justify-self:center;
+        overflow:visible;
+    }
+
+    .hero__halo {
+        width:min(68vw,500px);
+        height:min(68vw,500px);
+    }
+
+    .hero-card--main {
+        width:46%;
+        height:auto;
+        aspect-ratio:.82;
+        left:9%;
+        top:14%;
+    }
+
+    .hero-card--back {
+        width:33%;
+        height:auto;
+        aspect-ratio:.9;
+        right:6%;
+        top:8%;
+    }
+
+    .hero-card--front {
+        width:30%;
+        height:auto;
+        aspect-ratio:.72;
+        right:7%;
+        bottom:8%;
     }
 
     .category-grid {
@@ -1341,27 +1373,36 @@ h2 em {
     }
 
     .hero__visual {
-        height:430px;
+        height:clamp(340px,105vw,450px);
         width:100%;
         max-width:calc(100vw - 30px);
         justify-self:center;
     }
 
+    .hero__halo {
+        width:min(92vw,410px);
+        height:min(92vw,410px);
+    }
+
     .hero-card--main {
-        width:55%;
-        height:65%;
-        left:6%;
+        width:53%;
+        height:auto;
+        left:3%;
+        top:16%;
     }
 
     .hero-card--back {
-        width:38%;
-        right:1%;
+        width:35%;
+        height:auto;
+        right:3%;
+        top:10%;
     }
 
     .hero-card--front {
-        width:35%;
-        right:1%;
-        bottom:3%;
+        width:33%;
+        height:auto;
+        right:3%;
+        bottom:8%;
     }
 
     .floating-label {
@@ -1465,23 +1506,23 @@ h2 em {
 
     .hero-card--main {
         width:52%;
-        height:62%;
-        left:4%;
+        height:auto;
+        left:3%;
         top:16%;
     }
 
     .hero-card--back {
         width:35%;
-        height:44%;
-        right:4%;
-        top:11%;
+        height:auto;
+        right:3%;
+        top:10%;
     }
 
     .hero-card--front {
         width:33%;
-        height:40%;
-        right:4%;
-        bottom:7%;
+        height:auto;
+        right:3%;
+        bottom:8%;
     }
 
     .products {

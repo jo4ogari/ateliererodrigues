@@ -76,14 +76,16 @@ if (hasGSAP && !reduceMotion) {
     document.documentElement.classList.add('gsap-ready');
     gsap.set('.reveal', { opacity: 1, y: 0 });
 
+    const compactHero = matchMedia('(max-width: 1050px)').matches;
+
     const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
     heroTimeline
         .from('.header__inner', { y: -70, opacity: 0, duration: .9 })
         .from('.hero__copy > *', { y: 38, opacity: 0, duration: .85, stagger: .11 }, '-=.5')
         .from('.hero__halo', { scale: .55, opacity: 0, duration: 1.25, ease: 'expo.out' }, '-=.9')
-        .from('.hero-card--back', { x: 90, y: -40, rotation: 18, scale: .72, opacity: 0, duration: 1 }, '-=.95')
-        .from('.hero-card--main', { y: 85, rotation: -14, scale: .72, opacity: 0, duration: 1.1 }, '-=.82')
-        .from('.hero-card--front', { x: 80, y: 80, rotation: 17, scale: .68, opacity: 0, duration: .95 }, '-=.78')
+        .from('.hero-card--back', { x: compactHero ? 0 : 90, y: compactHero ? -24 : -40, rotation: 18, scale: .72, opacity: 0, duration: 1 }, '-=.95')
+        .from('.hero-card--main', { y: compactHero ? 42 : 85, rotation: -14, scale: .72, opacity: 0, duration: 1.1 }, '-=.82')
+        .from('.hero-card--front', { x: compactHero ? 0 : 80, y: compactHero ? 34 : 80, rotation: 17, scale: .68, opacity: 0, duration: .95 }, '-=.78')
         .from('.floating-label', { scale: .4, opacity: 0, stagger: .12, duration: .65, ease: 'back.out(2)' }, '-=.45')
         .from('.scroll-cue', { y: -12, opacity: 0, duration: .6 }, '-=.3');
 
